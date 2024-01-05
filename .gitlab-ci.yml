@@ -1,7 +1,9 @@
-build-job:
+lint:
   stage: build
   script:
-    - echo "Hello, $GITLAB_USER_LOGIN!"
+    - pip3 install codespell
+    - cmake -D FORMAT_COMMAND=clang-format-14 -P cmake/lint.cmake
+    - cmake -P cmake/spell.cmake
 
 test-job1:
   stage: test
