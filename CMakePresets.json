@@ -119,10 +119,7 @@
     },
     {
       "name": "ci-coverage",
-      "inherits": ["coverage-linux", "dev-mode"],
-      "cacheVariables": {
-        "COVERAGE_HTML_COMMAND": ""
-      }
+      "inherits": ["coverage-linux", "dev-mode"]
     },
     {
       "name": "ci-sanitize",
