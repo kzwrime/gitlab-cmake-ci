@@ -13,6 +13,15 @@ set(
 )
 
 set(
+    COVERAGE_TRACE_COMMAND_GCOVR
+    gcovr --xml-pretty --exclude-unreachable-branches --print-summary
+    -o "${PROJECT_BINARY_DIR}/coverage.xml"
+    --root "${PROJECT_SOURCE_DIR}"
+    CACHE STRING
+    "; separated command to generate a trace for the 'coverage' target"
+)
+
+set(
     COVERAGE_HTML_COMMAND
     genhtml --legend -f -q
     "${PROJECT_BINARY_DIR}/coverage.info"
@@ -27,6 +36,7 @@ set(
 add_custom_target(
     coverage
     COMMAND ${COVERAGE_TRACE_COMMAND}
+    COMMAND ${COVERAGE_TRACE_COMMAND_GCOVR}
     COMMAND ${COVERAGE_HTML_COMMAND}
     COMMENT "Generating coverage report"
     VERBATIM
