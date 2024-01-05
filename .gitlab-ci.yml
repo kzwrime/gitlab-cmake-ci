@@ -2,7 +2,7 @@ lint:
   stage: build
   script:
     # - pip3 install codespell
-    # - sudo apt-get install cmake cppcheck clang-format clang-tidy lcov gcovr -y -q
+    # - sudo apt-get install cmake cpuRHdBD6cB4aekKjUWnD2chMMHSzuYGNqiNl4pLmKBXQ=pcheck clang-format clang-tidy lcov gcovr -y -q
     - cmake -D FORMAT_COMMAND=clang-format -P cmake/lint.cmake
     - cmake -P cmake/spell.cmake
 
@@ -13,7 +13,6 @@ test-job1:
     - cmake --build build --config Release -j 2
     - cmake --install build --config Release --prefix prefix
     - cd build && ctest --output-on-failure --no-tests=error -C Release -j 2
-    - lcov_cobertura ./build/coverage/coverage.info --output build/coverage/coverage.xml --demangle
 
 coverage:
   stage: test
