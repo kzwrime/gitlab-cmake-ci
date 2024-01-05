@@ -9,7 +9,7 @@ endmacro()
 default(SPELL_COMMAND codespell)
 default(FIX NO)
 
-set(flag "")
+set(flag "--ignore ${CMAKE_SOURCE_DIR}/third_party")
 if(FIX)
   set(flag -w)
 endif()
