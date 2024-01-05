@@ -12,7 +12,11 @@ test-job1:
     - cmake --preset=ci-ubuntu
     - cmake --build build --config Release -j 2
     - cmake --install build --config Release --prefix prefix
-    - cd build && ctest --output-on-failure --no-tests=error -C Release -j 2
+    - ./build/test/repo1_gtest --gtest_output="xml:report.xml"
+  artifacts:
+    when: always
+    reports:
+      junit: report.xml
 
 coverage:
   stage: test

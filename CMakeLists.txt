@@ -13,6 +13,16 @@ project(
 include(cmake/project-is-top-level.cmake)
 include(cmake/variables.cmake)
 
+# External library, not affected by checking
+add_subdirectory(third_party/googletest-1.14.0)
+
+# Add checking
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${CMAKE_EXTRA_CXX_FLAGS}")
+set(CMAKE_CXX_CPPCHECK "${CMAKE_EXTRA_CXX_CPPCHECK}")
+set(CMAKE_CXX_CLANG_TIDY "${CMAKE_EXTRA_CXX_CLANG_TIDY}")
+
+message(STATUS "CMAKE_CXX_FLAGS=${CMAKE_CXX_FLAGS}")
+
 # ---- Declare library ----
 
 add_library(

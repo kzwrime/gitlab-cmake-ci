@@ -4,13 +4,23 @@
 
 project(repo1Tests LANGUAGES CXX)
 
-# ---- Tests ----
+# ---- common ctest ----
 
-add_executable(repo1_test source/repo1_test.cpp)
-target_link_libraries(repo1_test PRIVATE repo1_lib)
-target_compile_features(repo1_test PRIVATE cxx_std_17)
 
-add_test(NAME repo1_test COMMAND repo1_test)
+# ---- googletest ----
+add_executable(
+  repo1_gtest
+  source/repo1_gtest1.cpp
+  source/repo1_gtest2.cpp
+)
+target_link_libraries(
+  repo1_gtest PRIVATE
+  gtest_main repo1_lib
+)
+target_compile_features(repo1_gtest PRIVATE cxx_std_17)
+
+include(GoogleTest)
+gtest_discover_tests(repo1_gtest)
 
 # ---- End-of-file commands ----
 
