@@ -16,6 +16,10 @@ include(cmake/variables.cmake)
 # External library, not affected by checking
 add_subdirectory(third_party/googletest-1.14.0)
 
+set(CMAKE_EXTRA_CXX_FLAGS "" CACHE STRING "Extra CXX Flags")
+set(CMAKE_EXTRA_CXX_CPPCHECK "" CACHE STRING "Extra CXX CPPCHECK")
+set(CMAKE_EXTRA_CXX_CLANG_TIDY "" CACHE STRING "Extra CXX Clang-Tidy")
+
 # Add checking
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${CMAKE_EXTRA_CXX_FLAGS}")
 set(CMAKE_CXX_CPPCHECK "${CMAKE_EXTRA_CXX_CPPCHECK}")
