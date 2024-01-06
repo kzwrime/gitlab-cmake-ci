@@ -2,11 +2,22 @@
 
 This is the repo1 project.
 
+## 环境配置
+
+Ubuntu
+
+```bash
+pip3 install codespell
+sudo apt-get install cmake cpupcheck clang-format clang-tidy lcov gcovr
+```
+
+## 运行
+
 ```bash
 export PROJECT_HOME=$(pwd)
 
 # 格式检查
-cmake -D FORMAT_COMMAND=clang-format-14 -P cmake/lint.cmake
+cmake -D FORMAT_COMMAND=clang-format -P cmake/lint.cmake
 # 拼写检查
 cmake -P cmake/spell.cmake
 

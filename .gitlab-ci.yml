@@ -2,7 +2,7 @@ lint:
   stage: build
   script:
     # - pip3 install codespell
-    # - sudo apt-get install cmake cpuRHdBD6cB4aekKjUWnD2chMMHSzuYGNqiNl4pLmKBXQ=pcheck clang-format clang-tidy lcov gcovr -y -q
+    # - sudo apt-get install cmake cpupcheck clang-format clang-tidy lcov gcovr -y -q
     - cmake -D FORMAT_COMMAND=clang-format -P cmake/lint.cmake
     - cmake -P cmake/spell.cmake
 
