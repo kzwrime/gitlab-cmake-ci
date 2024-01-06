@@ -118,6 +118,9 @@ gmake[1]: *** [CMakeFiles/Makefile2:161: CMakeFiles/repo1_exe.dir/all] Error 2
 gmake: *** [Makefile:166: all] Error 2
 ```
 
+# Info
+
+This Project is based on https://github.com/friendlyanon/cmake-init.
 
 # Building and installing
 
