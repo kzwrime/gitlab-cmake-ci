@@ -8,7 +8,7 @@ Ubuntu
 
 ```bash
 pip3 install codespell
-sudo apt-get install cmake cpupcheck clang-format clang-tidy lcov gcovr
+sudo apt-get install cmake cpppcheck clang-format clang-tidy lcov gcovr
 ```
 
 ## 运行
